@@ -1,0 +1,31 @@
+{
+  "name": "skel-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "scripts": {
+    "gulp": "gulp",
+    "build": "gulp default"
+  },
+  "devDependencies": {
+    "@types/node": "^7.0.22",
+    "awesome-typescript-loader": "^3.0.0-beta.18",
+    "gulp": "^3.9.1",
+    "gulp-sourcemap": "^1.0.1",
+    "run-sequence": "^1.2.2",
+    "source-map-loader": "^0.2.1",
+    "typescript": "^2.1.4",
+    "webpack": "^2.6.1",
+    "webpack-stream": "^3.2.0"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "fs-extra": "^3.0.1",
+    "immutable": "^3.8.1",
+    "lodash": "^4.17.3",
+    "socket.io": "^2.0.1"
+  }
+}

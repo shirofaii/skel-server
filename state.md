@@ -1,6 +1,6 @@
 ## redux store state
 
-```js
+```json
 {
 }
 ```

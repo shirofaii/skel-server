@@ -9,7 +9,7 @@ fs.readdirSync('node_modules')
 })
 .forEach(function(mod) {
     nodeModules[mod] = 'commonjs ' + mod;
-});
+})
 
 gulp.task('server:js', function() {
     return gulp.src(['src/server.ts'])

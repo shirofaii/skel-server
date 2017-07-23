@@ -1,7 +1,4 @@
-import {mapValues, find, pull, forEach, some} from 'lodash';
-import {Controller} from './controller';
-import * as express from 'express';
-import * as path from 'path';
+import {Controller} from './controller'
 
 /*
     any method from this class send some message to the clients
@@ -9,16 +6,16 @@ import * as path from 'path';
 */
 
 export class Talker {
-    public controller:Controller;
-    public sockets = []; // managed by controller
-    
-    public constructor(controller:Controller) {
-        this.controller = controller;
+    controller:Controller
+    sockets = [] // managed by controller
+
+    constructor(controller:Controller) {
+        this.controller = controller
     }
-    
-    init(socket) {
+
+    init(socket):void {
         socket.emit('action', {
-            type:'init'
-        });
+            type:'init',
+        })
     }
 }

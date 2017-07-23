@@ -1,0 +1,31 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsEnable": true,
+    "rules": {
+        "semicolon": [true, "never"],
+        "quotemark": [true, "single", "jsx-double", "avoid-escape"],
+        "ordered-imports": [false],
+        "typedef-whitespace": [true, {
+            "call-signature": "nospace",
+            "index-signature": "nospace",
+            "parameter": "nospace",
+            "property-declaration": "nospace",
+            "variable-declaration": "nospace"
+        },
+        {
+            "call-signature": "nospace",
+            "index-signature": "onespace",
+            "parameter": "nospace",
+            "property-declaration": "nospace",
+            "variable-declaration": "nospace"
+        }],
+        "whitespace": [false, "check-decl"],
+        "member-access": [true, "no-public"],
+        "typedef": [true, "call-signature", "property-declaration"],
+        "no-console": [false]
+    },
+    "rulesDirectory": []
+}

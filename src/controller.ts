@@ -1,38 +1,38 @@
-import {mapValues, find, pull, forEach, some} from 'lodash';
-import {Talker} from './talker';
-import * as express from 'express';
-import * as path from 'path';
+import {mapValues, find, pull, forEach, some} from 'lodash'
+import {Talker} from './talker'
+import * as express from 'express'
+import * as path from 'path'
 
 export class Controller {
-    public expressApp;
-    public talker:Talker;
-    
-    public constructor() {
-        this.talker = new Talker(this);
+    expressApp
+    talker:Talker
+
+    constructor() {
+        this.talker = new Talker(this)
     }
-    
-    toReduxState() {
+
+    toReduxState():object {
         return {}
     }
-    
+
     connect(socket):void {
-        this.talker.sockets.push(socket);
-        socket.on('disconnect', (socket) => this.disconnect(socket));
-        socket.on('action', action => this.handleActions(action));
-        
-        this.talker.init(socket);
+        this.talker.sockets.push(socket)
+        socket.on('disconnect', (s) => this.disconnect(s))
+        socket.on('action', (a) => this.handleActions(a))
+
+        this.talker.init(socket)
     }
-    
+
     disconnect(socket):void {
-        pull(this.talker.sockets, socket);
+        pull(this.talker.sockets, socket)
     }
-    
+
     handleActions(action):void {
-        switch(action.type) {
+        switch (action.type) {
         }
     }
-    
-    serveWith(app) {
+
+    serveWith(app):void {
         this.expressApp = app
     }
 }

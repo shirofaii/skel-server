@@ -13,9 +13,7 @@ process.on('uncaughtException', (e) => {
     console.log(e.toString() + '\n' + e.stack.toString())
 })
 
-server.listen(80)
-
-app.use(express.static('wwwroot'))
+server.listen(1213)
 
 const controller = new Controller()
 controller.serveWith(app)

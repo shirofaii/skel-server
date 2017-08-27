@@ -25,7 +25,8 @@
         "whitespace": [false, "check-decl"],
         "member-access": [true, "no-public"],
         "typedef": [true, "call-signature", "property-declaration"],
-        "no-console": [false]
+        "no-console": [false],
+        "arrow-parens": [true, "ban-single-arg-parens"]
     },
     "rulesDirectory": []
 }

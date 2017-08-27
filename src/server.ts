@@ -8,7 +8,7 @@ const app = express()
 const server = http.createServer(app)
 const ioServer = io(server)
 
-process.on('uncaughtException', (e) => {
+process.on('uncaughtException', e => {
     fs.writeFileSync('crash.log', e.toString() + '\n' + e.stack.toString())
     console.log(e.toString() + '\n' + e.stack.toString())
 })
@@ -18,10 +18,10 @@ server.listen(1213)
 const controller = new Controller()
 controller.serveWith(app)
 
-ioServer.on('connection', (socket) => {
+ioServer.on('connection', socket => {
     controller.connect(socket)
 })
 
-ioServer.on('disconnect', (socket) => {
+ioServer.on('disconnect', socket => {
     controller.disconnect(socket)
 })

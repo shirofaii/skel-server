@@ -11,14 +11,10 @@ export class Controller {
         this.talker = new Talker(this)
     }
 
-    toReduxState():object {
-        return {}
-    }
-
     connect(socket):void {
         this.talker.sockets.push(socket)
-        socket.on('disconnect', (s) => this.disconnect(s))
-        socket.on('action', (a) => this.handleActions(a))
+        socket.on('disconnect', s => this.disconnect(s))
+        socket.on('action', a => this.handleActions(a))
 
         this.talker.init(socket)
     }
